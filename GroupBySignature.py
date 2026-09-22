@@ -1,5 +1,4 @@
 def group_by_signature(words: list) -> list:
-    pass
     from collections import defaultdict
     groups = defaultdict(list)
     signature_to_first_index = {}
