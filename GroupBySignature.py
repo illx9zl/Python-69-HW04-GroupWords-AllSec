@@ -1,5 +1,21 @@
 def group_by_signature(words: list) -> list:
     pass
+    from collections import defaultdict
+    groups = defaultdict(list)
+    signature_to_first_index = {}
+    
+    for i, word in enumerate(words):
+        if not word.isalpha():
+            if not word.isalpha():
+                continue
+        signature = ''.join(sorted(word))
+
+        if signature not in signature_to_first_index:
+            signature_to_first_index[signature] = i
+        groups[signature].append(word)
+    result_groups = list(groups.values())
+    result_groups.sort(key=lambda group: signature_to_first_index[''.join(sorted(group[0]))])
+    return result_groups
 
 if __name__ == "__main__":
     # Example 1
